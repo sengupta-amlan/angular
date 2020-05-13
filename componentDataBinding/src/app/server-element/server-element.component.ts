@@ -1,0 +1,23 @@
+import { Component, OnInit, Input, ViewEncapsulation, ContentChild, ElementRef } from '@angular/core';
+
+@Component({
+  selector: 'app-server-element',
+  templateUrl: './server-element.component.html',
+  styleUrls: ['./server-element.component.css'],
+  encapsulation: ViewEncapsulation.Emulated
+})
+export class ServerElementComponent implements OnInit {
+  // tslint:disable-next-line: no-input-rename
+  // ViewChild('',{static:true}) header:ElementRef
+  // tslint:disable-next-line: no-input-rename
+  @ContentChild('contentParagraph', {static: true}) paragraph: ElementRef;
+  // tslint:disable-next-line: no-input-rename
+  @Input('srvElement') element: {type: string, name: string, content: string};
+  constructor() {
+
+  }
+
+  ngOnInit(){
+  }
+
+}
